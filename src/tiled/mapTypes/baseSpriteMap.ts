@@ -1,5 +1,5 @@
 import { Vector2, Texture, Scene } from "@babylonjs/core";
-import { ISpriteMap2, TiledMap, TiledTileset } from "../tiled.types";
+import { ISpriteMap2, TiledMap, TiledTileset } from "../tilEd.types";
 
 export abstract class BaseSpriteMap implements ISpriteMap2 {
     protected _map: TiledMap;

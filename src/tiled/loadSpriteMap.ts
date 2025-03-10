@@ -1,11 +1,11 @@
 import { Matrix, Mesh, MeshBuilder, Scene, StandardMaterial, Vector3, Vector4 } from "@babylonjs/core";
-import { ISpriteMap2 } from "./tiled.types";
+import { ISpriteMap2 } from "./tilEd.types";
 import { OrthogonalSpriteMap } from "./mapTypes/orthogonalSpriteMap";
 import { IsometricSpriteMap } from "./mapTypes/isometricSpriteMap";
 import { HexagonalPointTopSpriteMap } from "./mapTypes/hexagonalPointTopSpriteMap";
 import { HexagonalFlatTopSpriteMap } from "./mapTypes/hexagonalFlatTopSpriteMap";
 import { FileUtilities } from "./fileUtilities";
-import { TiledParser } from "./tiledParser";
+import { TiledParser } from "./tilEdParser";
 
 export async function loadSpriteMap(rootUrl: string, scene: Scene) : Promise<Mesh> {
     const url = new URL(rootUrl);

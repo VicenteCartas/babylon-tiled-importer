@@ -1,6 +1,6 @@
 import { Scene } from "@babylonjs/core";
-import { TiledMap } from "./tiled.types";
-import { TiledParser } from "./tiledParser";
+import { TiledMap } from "./tilEd.types";
+import { TiledParser } from "./tilEdParser";
 import { FileUtilities } from "./fileUtilities";
 
 export class TiledImporter {

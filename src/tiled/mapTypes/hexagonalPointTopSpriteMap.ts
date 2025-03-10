@@ -1,5 +1,5 @@
 import { Engine, RawTexture, Scene, Texture, Vector, Vector2 } from "@babylonjs/core";
-import { ISpriteMap2, TiledMap } from "../tiled.types";
+import { ISpriteMap2, TiledMap } from "../tilEd.types";
 
 export class HexagonalPointTopSpriteMap implements ISpriteMap2 {
     private _map: TiledMap;

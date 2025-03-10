@@ -1,5 +1,5 @@
 import { RawTexture, Scene, Texture, Vector2 } from "@babylonjs/core";
-import { TiledMap, TiledTileset } from "../tiled.types";
+import { TiledMap, TiledTileset } from "../tilEd.types";
 import { BaseSpriteMap } from "./baseSpriteMap";
 
 export class HexagonalFlatTopSpriteMap extends BaseSpriteMap {

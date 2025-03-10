@@ -9,7 +9,7 @@ import {
     TiledMapStaggerIndex,
     TiledTileset,
     TiledTilesetTile
-} from "./tiled.types";
+} from "./tilEd.types";
 import { FileUtilities } from "./fileUtilities";
 
 export class TiledParser {
