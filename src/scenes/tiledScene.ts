@@ -31,23 +31,18 @@ export class TilEdScene implements CreateSceneClass {
             });
         });
 
-        const camera = new ArcRotateCamera("Camera", -Math.PI / 2, Math.PI / 2, 3, Vector3.Zero());
+        const camera = new ArcRotateCamera("Camera", -Math.PI / 2, Math.PI / 2, 10, Vector3.Zero());
         camera.attachControl(canvas, true);
         const light = new HemisphericLight("light", new Vector3(1, 1, 0));
         light.intensity = 10;
 
-        //const camera = new ArcRotateCamera("Camera", -Math.PI / 2, Math.PI / 2, 8, Vector3.Zero());
-        //camera.position = new Vector3(camera.position.x, camera.position.y + 100, camera.position.z - 100);
-        //camera.attachControl(canvas, true);
-        //const light = new PointLight("Point", new Vector3(5, 10, 5), scene);
-        //light.intensity = 0.7;
+        // New SpriteMap rendering, try different maps to see
+        let mesh = undefined;
+        mesh = await loadSpriteMap('http://localhost:8080/maps/cityMap.tmx', scene);
+        //mesh = await loadSpriteMap('http://localhost:8080/maps/worldMap.tmx', scene);
+        //mesh = await loadSpriteMap('http://localhost:8080/maps/HexagonalMap.tmx', scene);
 
-        // New SpriteMap rendering
-        //await loadSpriteMap('http://localhost:8080/maps/NewRenderingMap.tmx', scene);
-        //await loadSpriteMap('http://localhost:8080/maps/Transparencies.tmx', scene);
-        //await loadSpriteMap('http://localhost:8080/maps/cityMap.tmx', scene);
-        //await loadSpriteMap('http://localhost:8080/maps/worldMap.tmx', scene);
-        await loadSpriteMap('http://localhost:8080/maps/HexagonalMap.tmx', scene);
+        camera.zoomOn([mesh]);
 
         return scene;
     };

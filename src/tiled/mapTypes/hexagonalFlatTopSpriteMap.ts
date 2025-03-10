@@ -66,7 +66,6 @@ export class HexagonalFlatTopSpriteMap extends BaseSpriteMap {
         const tileWidthPx = this._map.tileWidth;
         const mapWidthPx = this._mapPixelSize.x;
 
-
         // TRANSFORM ODD/EVEN STRINGS TO 1/0 so it's just an IF
         if (mapX % 2 === 1 && this._map.staggerIndex === "odd") {
             mapY += 0.5;
@@ -81,7 +80,6 @@ export class HexagonalFlatTopSpriteMap extends BaseSpriteMap {
         const tilePosition = tileId - tileset.firstgid;
         const tileTextureData = await this._getTilesetTextureData(tileset, tilePosition);
 
-        // Alpha blend the texture buffer data with the tile buffer data
         let offset = 0;
         if (mapX % 2 === 1) {
             offset = (mapXPx + mapYPx * mapWidthPx) * 4;
@@ -89,6 +87,7 @@ export class HexagonalFlatTopSpriteMap extends BaseSpriteMap {
             offset = (mapXPx + mapYPx * mapWidthPx) * 4;
         }
 
+        // Alpha blend the texture buffer data with the tile buffer data
         for (let j = 0; j < tileHeightPx; j++) {
             for (let i = 0; i < tileWidthPx; i++) {
                 const mapR = this._mapBuffer[offset + (i + mapWidthPx * j) * 4];

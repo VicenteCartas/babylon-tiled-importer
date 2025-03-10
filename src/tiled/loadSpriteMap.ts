@@ -1,4 +1,4 @@
-import { Mesh, MeshBuilder, Scene, StandardMaterial, Vector4 } from "@babylonjs/core";
+import { Matrix, Mesh, MeshBuilder, Scene, StandardMaterial, Vector3, Vector4 } from "@babylonjs/core";
 import { ISpriteMap2 } from "./tiled.types";
 import { OrthogonalSpriteMap } from "./mapTypes/orthogonalSpriteMap";
 import { IsometricSpriteMap } from "./mapTypes/isometricSpriteMap";
@@ -7,7 +7,7 @@ import { HexagonalFlatTopSpriteMap } from "./mapTypes/hexagonalFlatTopSpriteMap"
 import { FileUtilities } from "./fileUtilities";
 import { TiledParser } from "./tiledParser";
 
-export async function loadSpriteMap(rootUrl: string, scene: Scene) : Promise<ISpriteMap2> {
+export async function loadSpriteMap(rootUrl: string, scene: Scene) : Promise<Mesh> {
     const url = new URL(rootUrl);
     const mapData = await FileUtilities.requestFile(url);
     const parser = new TiledParser();
@@ -53,5 +53,5 @@ export async function loadSpriteMap(rootUrl: string, scene: Scene) : Promise<ISp
     material.useAlphaFromDiffuseTexture = true;
     plane.material = material;
 
-    return spriteMap;
+    return plane;
 }
